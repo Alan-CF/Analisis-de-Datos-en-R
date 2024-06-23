@@ -1,0 +1,130 @@
+---
+title: "Etapa 3"
+author: "Alan C"
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Obtencion de Datos
+
+```{r}
+M = read.csv("datosEt1.csv")  
+head(M, n=10)  
+
+R1 = subset(M, M$region=="Sudamerica")[-1]
+R2 = subset(M, M$region=="Africa del Norte")[-1]
+
+R1$region <- NULL
+R2$region <- NULL
+```
+
+## Correlacion lineal
+
+```{r}
+ cat("R1")
+ cor(R1)
+ plot(R1, col="blue",pch="o")
+ 
+ cat(paste("acceso_electrd vs log(acceso_combust_limpios): ",cor(R1$acceso_electrd, log(R1$acceso_combust_limpios))))
+ 
+ cat("R2")
+ plot(R2, col="blue",pch="o")
+ cor(R2)
+ cat(paste("densidad_pobl_Km2 vs log(electrd_fosiles): ",cor(R1$acceso_electrd, log(R1$acceso_combust_limpios))))
+```
+
+## Regresion
+
+```{r}
+x = R1$acceso_electrd
+y = R1$acceso_combust_limpios
+
+xt = R1$acceso_electrd
+yt = log(R1$acceso_combust_limpios)
+
+x2 = R2$densidad_pobl_Km2
+y2 = R2$acceso_combust_limpios
+
+x2t = R2$densidad_pobl_Km2
+y2t = log(R2$electrd_fosiles)
+```
+
+## Modelo lineal
+
+```{r}
+A = lm(x ~ y)
+summary(A)
+plot(x, y)
+
+A2 = lm(x2 ~ y2)
+summary(A2)
+plot(x2, y2)
+```
+
+## Modelo intrinsicamente lineal
+
+```{r}
+B = lm(xt ~ yt)
+summary(B)
+plot(xt, yt)
+
+x2t <- x2t[is.finite(y2t)]
+y2t <- y2t[is.finite(y2t)]
+B2 = lm(x2t ~ y2t)
+summary(B2)
+plot(x2t, y2t)
+```
+
+El modelo lineal tiene mejor ajuste y correlación en R1. En R2 el modelo intrinsicamente lineal no es significativo.
+
+## Analisis errores
+```{r}
+qqnorm(A$residuals, pch=19, col="lightblue")
+qqline(A$residuals, col="red")
+
+plot(A$fitted.values,A$residuals, col="red", pch=20)
+abline(h=0,col="blue")
+
+plot(A$residuals)
+abline(h=0, col="darkblue")
+
+
+
+
+qqnorm(A2$residuals, pch=19, col="lightblue")
+qqline(A2$residuals, col="red")
+
+plot(A2$fitted.values,A2$residuals, col="red", pch=20)
+abline(h=0,col="blue")
+
+plot(A2$residuals)
+abline(h=0, col="darkblue")
+```
+
+## Analisis de normalidad
+```{r}
+hist(A$residual, freq=FALSE, col="pink", main="Histograma de residuales", xlab="residuales", ylab="frecuencia")
+lines(density(A$residuals), col="darkblue", lwd=2)
+m=mean(A$residuals) #media de la muestra de los residuales
+ds=sd(A$residuals) #desviación estándar muestral de los residuales
+x= seq(m-4*ds, m+4*ds, 0.1) # crea una secuencia de datos que estén 4 desviaciones estándar alrededor de la media y que vayan de 0.1 en 0.1
+curve(dnorm(x, m, ds), add=TRUE, col="red", lwd=2)
+
+hist(A2$residual, freq=FALSE, col="pink", main="Histograma de residuales", xlab = "residuales", ylab="frecuencia")
+lines(density(A2$residuals), col="darkblue", lwd=2)
+m2 = mean(A2$residuals) #media de la muestra de los residuales
+ds2 = sd(A2$residuals) #desviación estándar muestral de los residuales
+x = seq(m2-4*ds2, m2+4*ds2, 0.1) # crea una secuencia de datos que estén 4 desviaciones estándar alrededor de la media y que vayan de 0.1 en 0.1
+curve(dnorm(x, m2, ds2), add=TRUE, col="red", lwd=2)
+```
+
+
+Conclusiones:
+Para la región 1 la variable seleccionada fue el acceso a combustibles limpios y se comparó con la variable acceso a electricidad pues al observar la matriz de dispersión estas variables forman una línea casi perfecta. Su alta correlación también es confirmada por la matriz de correlación la cual afirma que tienen una correlación del 98%. 
+Al crear una regresión lineal del modelo sus coeficientes tienen significancia debido a que su valor de p es menor al de alfa por lo cual no se puede desmentir la hipótesis. El resumen también indica un nivel de r^2 de 98% lo cual indica que la ecuación modela el 98% de la estadística. 
+Al analizar el error se observa que siguen una distribución aproximadamente normal y no se ven patrones en el muestreo, pero no tiene un error aleatorio, demostrado por su patrón en la varianza. Su media tampoco parece ser 0.
+No recomendaría el uso de ninguno de los 2 modelos pues mientras que el 1 no presenta un muestreo confiable, la regresión lineal de la segunda región no es significativa y tiene un r^2 de apenas el 50%, además de que al ver los errores, estos siguen patrones y no tienen varianza aleatoria ni media de 0. 
+

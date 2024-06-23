@@ -1,0 +1,40 @@
+---
+title: "Reto"
+author: "Alan Canales"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+d = read.csv("datos.csv")
+```
+
+## Variables
+
+```{r}
+table(d$entidad)
+summary(d)
+```
+## Creando Regiones
+
+```{r}
+
+sudamerica = c("Brazil", "Chile", "Guyana")
+
+region = ifelse(d$entidad %in% sudamerica, "Sudamerica", "Africa del Norte")
+
+d1 = cbind(d, region)
+
+library(dplyr)
+d2 = select(d1, "entidad", "region", "acceso_electrd", "acceso_combust_limpios", "electrd_fosiles", "crecimiento_PIB", "densidad_pobl_Km2")
+d2 = na.omit(d2)
+
+write.csv(d2, "datosEt1.csv", row.names = FALSE)
+
+```

@@ -1,0 +1,59 @@
+---
+title: "Analisis Reto"
+author: "Alan C"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+## Importación de Datos
+```{r}
+d <- read.csv("datosEt1.csv")
+```
+
+## Resumen de variables
+
+```{r}
+summary(d)
+```
+
+## Analisis Histograma
+
+```{r}
+hist(d$acceso_electrd)
+hist(d$acceso_combust_limpios)
+hist(d$electrd_fosiles)
+hist(d$crecimiento_PIB)
+hist(d$densidad_pobl_Km2)
+```
+
+A partir de estos histogramas se analiza cómo se concentran los datos. Se observa que la mayoría de los países tienen acceso a electricidad, pero los países están polarizados entre tener o no tener electricidad. También se observa un sesgo positivo en la cantidad de Teravatios producidos por los países. Respecto al crecimiento del PIB, todos se concentran entre -10 y 10, con un valor atípico en 40. La densidad poblacional no sigue una distribución. 
+
+## Analisis Diagrama de caja
+
+```{r}
+boxplot(d)
+```
+
+A simple vista se puede observar los diferentes rangos de los cuartiles de las variables y como. Se observa que "Acceso a electricidad" tiene un Q3 y Q4 muy pequeño lo cual significa que la mitad de los datos se encuentran entre 75 y 100. Por otra parte, los residentes de la mayoría de los países, o tienen completo acceso, o casi no. Esto se ve representado por el tamaño de Q1 y Q4 los cuales son muy pequeños. En términos de producción de energía a base de combustibles fósiles, se observa que la gran mayoría produce casi 0 Tv de energía a base de estos, aunque el dominio es muy amplio, habiendo muchos puntos fuera del rango considerado como típico. Al ver el diagrama de caja se observa que casi todos los datos se encuentran entre 0 y 5. Lo cual hace que el diagrama sea extremadamente corto.Al observar la densidad poblacional se observa que Q1, Q2 y la mitad de Q3 se encuentran por debajo de 50 lo cual significa áreas donde la población está muy dispersa o hay muy poca población. El 4to cuartil demuestra que hay áreas de mucha concentración de población, pero representan solo el 25% de los datos. 
+
+## Relacion entre variables. 
+
+```{r}
+x <- d$electrd_fosiles
+y <- d$crecimiento_PIB
+corr <- cor(x, y)
+tend <- lm(x ~ y)
+
+plot(x, y, main="Produción de electricidad basada en combustibles fosiles\n vs crecimiento del PIB", xlab="Prod. elect. comb. fos. (Tv)", ylab="Crecimiento del PIB (%)")
+abline(tend, col = "red")
+text(30, 20, labels= "Linea de Tendencia", col = "red")
+text(100, 30, labels= paste("Corr =", round(corr, 2)))
+```
+
+A partir de la gráfica anterior se concluye que existe una correlación negativa débil entre la producción de energía a base de combustibles fósiles y el crecimiento poblacional, lo cual desmiente la hipótesis de que para el desarrollo de un país es necesario producir más energía a base de combustibles fósiles. La línea de tendencia muestra una pendiente negativa lo cual significa que entre menor es el crecimiento de un país mayor es su producción de combustibles fósiles, esto demuestra que entre menos desarrollo tenga el país, mayor es su dependencia en tecnologías anticuadas para la producción de energía como lo son los combustibles fósiles. 

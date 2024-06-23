@@ -1,0 +1,127 @@
+"entidad","region","acceso_electrd","acceso_combust_limpios","electrd_fosiles","crecimiento_PIB","densidad_pobl_Km2"
+"Brazil","Sudamerica",94.391716,89,28.87,4.387949444,25
+"Brazil","Sudamerica",96.016525,89.7,35.19,1.389896404,25
+"Brazil","Sudamerica",96.65299,90.1,33.5,3.053461857,25
+"Brazil","Sudamerica",96.980095,90.6,31.62,1.140828999,25
+"Brazil","Sudamerica",96.76511,91.1,40.14,5.759964637,25
+"Brazil","Sudamerica",97.09351,91.6,39.56,3.202132062,25
+"Brazil","Sudamerica",97.594315,92.1,39.4,3.961988709,25
+"Brazil","Sudamerica",98.12538,92.6,37.64,6.069870607,25
+"Brazil","Sudamerica",98.52663,93.1,55.87,5.094195448,25
+"Brazil","Sudamerica",98.85694,93.6,36.32,-0.125812003,25
+"Brazil","Sudamerica",98.6,94,61.02,7.528225818,25
+"Brazil","Sudamerica",99.32869,94.3,50.27,3.974423079,25
+"Brazil","Sudamerica",99.51949,94.7,77.21,1.921175985,25
+"Brazil","Sudamerica",99.57515,95,112,3.00482267,25
+"Brazil","Sudamerica",99.650246,95.2,136.58,0.50395574,25
+"Brazil","Sudamerica",99.7109,95.4,128.85,-3.545763393,25
+"Brazil","Sudamerica",99.7,95.7,93.06,-3.275916906,25
+"Brazil","Sudamerica",99.8,95.7,101.9,1.322869054,25
+"Brazil","Sudamerica",99.7,95.8,86.69,1.783666761,25
+"Brazil","Sudamerica",99.8,95.8,90.91,1.411152985,25
+"Brazil","Sudamerica",100,95.9,81.15,-4.059048273,25
+"Chile","Sudamerica",97.93869,100,20.42,5.326938419,26
+"Chile","Sudamerica",97.11581,100,19.59,3.303047313,26
+"Chile","Sudamerica",97.28368,100,19.87,3.106970532,26
+"Chile","Sudamerica",98.782326,100,23.3,4.091047685,26
+"Chile","Sudamerica",97.60609,100,27.79,7.209539709,26
+"Chile","Sudamerica",97.76531,100,25.2,5.742830489,26
+"Chile","Sudamerica",99.36811,100,25.54,6.317176343,26
+"Chile","Sudamerica",98.09202,100,33.69,4.905324504,26
+"Chile","Sudamerica",98.26487,100,32.59,3.529530553,26
+"Chile","Sudamerica",99.59366,100,32.12,-1.564239443,26
+"Chile","Sudamerica",99.53839,100,36.71,5.844177296,26
+"Chile","Sudamerica",99.588196,100,41,6.110918829,26
+"Chile","Sudamerica",100,100,45.17,5.318628,26
+"Chile","Sudamerica",99.6,100,48,4.045004298,26
+"Chile","Sudamerica",100,100,44.51,1.766739784,26
+"Chile","Sudamerica",99.71484,100,44.37,2.303767036,26
+"Chile","Sudamerica",100,100,49.09,1.711089289,26
+"Chile","Sudamerica",99.7,100,44.9,1.184544707,26
+"Chile","Sudamerica",100,100,43.85,3.713859177,26
+"Chile","Sudamerica",100,100,45.16,0.942005307,26
+"Chile","Sudamerica",100,100,43.69,-5.771501669,26
+"Guyana","Sudamerica",74.51728,35.6,0.82,-1.363803903,4
+"Guyana","Sudamerica",75.10074,37.7,0.85,2.279521659,4
+"Guyana","Sudamerica",75.67661,39.9,0.85,1.132626962,4
+"Guyana","Sudamerica",76.24725,42.4,0.77,-0.632225388,4
+"Guyana","Sudamerica",76.81501,45,0.8,1.56335211,4
+"Guyana","Sudamerica",77.5,47.6,0.6,-1.950957595,4
+"Guyana","Sudamerica",73.38259,50.3,0.62,5.129609348,4
+"Guyana","Sudamerica",78.524925,53,0.65,7.191236241,4
+"Guyana","Sudamerica",79.10577,55.8,0.66,1.606001675,4
+"Guyana","Sudamerica",77.6,58.5,0.61,3.876525381,4
+"Guyana","Sudamerica",83.09163,61,0.73,3.778200183,4
+"Guyana","Sudamerica",84.08454,63.7,0.77,5.339378131,4
+"Guyana","Sudamerica",85.06648,66.2,0.81,5.383623469,4
+"Guyana","Sudamerica",86.02649,68.6,0.85,3.653504768,4
+"Guyana","Sudamerica",86.9,70.9,0.85,1.686027732,4
+"Guyana","Sudamerica",88.00384,72.8,0.88,0.68752121,4
+"Guyana","Sudamerica",89.17036,74.7,0.95,3.807918837,4
+"Guyana","Sudamerica",90.295815,76.2,0.99,3.734374061,4
+"Guyana","Sudamerica",91.19838,77.9,1,4.441013589,4
+"Guyana","Sudamerica",91.91576,79.5,1.06,5.352627426,4
+"Guyana","Sudamerica",92.54054,80.6,1.01,43.47955594,4
+"Namibia","Africa del Norte",36.5,33.7,0.04,3.492183364,3
+"Namibia","Africa del Norte",35.96686,34,0,1.177948695,3
+"Namibia","Africa del Norte",36.925476,35,0,4.788661219,3
+"Namibia","Africa del Norte",37.878853,35.9,0.01,4.239794296,3
+"Namibia","Africa del Norte",38.82934,36.4,0,12.2695481,3
+"Namibia","Africa del Norte",39.779297,37.3,0.04,2.529262658,3
+"Namibia","Africa del Norte",40.731125,37.9,0.09,7.073175318,3
+"Namibia","Africa del Norte",43.7,38.6,0.04,5.374044152,3
+"Namibia","Africa del Norte",42.65105,39.5,0.17,2.649812038,3
+"Namibia","Africa del Norte",44.1,40.1,0.08,0.295970914,3
+"Namibia","Africa del Norte",44.610737,40.9,0.05,6.03924948,3
+"Namibia","Africa del Norte",42.3,41.5,0.03,5.091338139,3
+"Namibia","Africa del Norte",46.63186,42.2,0.03,5.06168207,3
+"Namibia","Africa del Norte",47.4,43,0.06,5.614719623,3
+"Namibia","Africa del Norte",48.728516,43.6,0.02,6.09251916,3
+"Namibia","Africa del Norte",51.6,44.3,0.03,4.264174538,3
+"Namibia","Africa del Norte",49.7,45.2,0.06,0.03379445,3
+"Namibia","Africa del Norte",52.5,45.6,0.06,-1.027250827,3
+"Namibia","Africa del Norte",54.002895,46,0.02,1.059943471,3
+"Namibia","Africa del Norte",55.17709,46.5,0.04,-0.88809916,3
+"Namibia","Africa del Norte",56.258694,46.8,0.06,-8.500149038,3
+"Malawi","Africa del Norte",4.8,2.1,0.15,1.576077837,203
+"Malawi","Africa del Norte",5.13952,2.1,0.15,-4.974963848,203
+"Malawi","Africa del Norte",5.5341597,2.1,0.16,1.700000014,203
+"Malawi","Africa del Norte",6.2,2.1,0.12,5.705639438,203
+"Malawi","Africa del Norte",6.9,2.1,0.15,5.420497693,203
+"Malawi","Africa del Norte",6.696063,2.2,0.14,3.268725827,203
+"Malawi","Africa del Norte",3.6532273,2.3,0.14,4.699999992,203
+"Malawi","Africa del Norte",7.476292,2.3,0.14,9.600000004,203
+"Malawi","Africa del Norte",7.8758984,2.4,0.11,7.639736775,203
+"Malawi","Africa del Norte",8.285444,2.45,0.13,8.328110276,203
+"Malawi","Africa del Norte",8.7,2.5,0.13,6.874065633,203
+"Malawi","Africa del Norte",7.6,2.5,0.13,4.854055111,203
+"Malawi","Africa del Norte",7.4,2.4,0.13,1.885799507,203
+"Malawi","Africa del Norte",9,2.3,0.13,5.199999997,203
+"Malawi","Africa del Norte",11.9,2.2,0.13,5.700000004,203
+"Malawi","Africa del Norte",10.8,2,0.13,2.8,203
+"Malawi","Africa del Norte",11,1.8,0.15,2.484040625,203
+"Malawi","Africa del Norte",12.7,1.6,0.19,4.000030517,203
+"Malawi","Africa del Norte",18.02,1.3,0.2,4.391688296,203
+"Malawi","Africa del Norte",11.2,1.2,0.2,5.448181336,203
+"Malawi","Africa del Norte",14.866769,1,0.21,0.799998331,203
+"Kenya","Africa del Norte",15.131171,1.8,2.02,0.599695392,94
+"Kenya","Africa del Norte",17.033085,2.2,1.52,3.779906496,94
+"Kenya","Africa del Norte",18.927414,2.6,1.1,0.54685953,94
+"Kenya","Africa del Norte",16,3.1,0.99,2.932475546,94
+"Kenya","Africa del Norte",22.702715,3.6,1.45,5.104299776,94
+"Kenya","Africa del Norte",24.588387,4.2,1.69,5.906666082,94
+"Kenya","Africa del Norte",26.47593,4.8,1.84,6.472494299,94
+"Kenya","Africa del Norte",28.367994,5.3,1.87,6.850729771,94
+"Kenya","Africa del Norte",30.26729,6,2.22,0.232282746,94
+"Kenya","Africa del Norte",23,6.6,2.73,3.306939815,94
+"Kenya","Africa del Norte",19.2,7.2,2.12,8.058473603,94
+"Kenya","Africa del Norte",36.035656,8,2.4,5.12110612,94
+"Kenya","Africa del Norte",37.990967,8.7,2.03,4.568679614,94
+"Kenya","Africa del Norte",39.966106,9.6,2.58,3.797848393,94
+"Kenya","Africa del Norte",36,10.6,1.67,5.020111002,94
+"Kenya","Africa del Norte",41.6,11.6,1.43,4.967721128,94
+"Kenya","Africa del Norte",53.1,13,1.43,4.213517068,94
+"Kenya","Africa del Norte",55.97641,14.4,2.29,3.815506427,94
+"Kenya","Africa del Norte",61.284573,16,1.46,5.62910144,94
+"Kenya","Africa del Norte",69.7,17.7,1.25,4.981132628,94
+"Kenya","Africa del Norte",71.43794,19.5,0.92,-0.316182729,94
