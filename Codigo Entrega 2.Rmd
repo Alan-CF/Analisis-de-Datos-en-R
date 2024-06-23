@@ -1,0 +1,76 @@
+---
+title: "Entrega 2"
+author: "Alan Canales"
+date: "`r Sys.Date()`"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(Biostrings)
+library(seqinr)
+library(ape)
+library(ggtree)
+library(DECIPHER)
+```
+
+
+```{r}
+virus <- c("NC_045512.2", "PP734345.1", "OR915548", "PP357680.1", "PP584641.1", "OR122584.1", "BS010624.1", "PP584657.1", "OQ103195.1", "PP601401.1", "PP158711.1", "OR529199.1", "ON115272.1", "OP604184.2", "PP425384.1", "OQ931803.1", "OP302810.1", "OM287553.1", "PP107056.1", "OR726214", "MZ416737.1")
+
+paises <- c("WU","USA","IND","FRA","DEU","BRA","JAP","KOR","ITA","GBR","RUS","TUR","ESP","AUS","VNM","TWN","ARG","NLD","MEX","IRN","POL")
+
+seq <- read.GenBank(virus)
+
+seqs <- ape::write.dna(seq, "seq.fasta", "fasta", FALSE)
+
+fasta <- readDNAStringSet("seq.fasta")
+
+longitudes = NULL
+for(i in 1 : length(fasta)) {
+  cat("Length of", virus[i], ":\t", length(fasta[[i]]), "bases\n")
+  longitudes = c(longitudes, length(fasta[[i]]))
+}
+
+seqsApe <- ape::read.dna("seq.fasta", format = "fasta")
+
+frecuencias <- NULL
+for(i in 1 : length(fasta)) {
+  frecuencia <- ape::base.freq(seqsApe[i], freq = TRUE)
+  frecuencias <- rbind(frecuencias, frecuencia)
+}
+frecuencias <- t(frecuencias)
+colnames(frecuencias) <- virus
+
+bp<-barplot(frecuencias, names.arg = paises, cex.names = 0.5,col = rainbow(4),ylim = c(0,35000), main = "Concentración y Numero de Bases")
+text(x=bp,y=longitudes+2000,labels = longitudes,cex = 0.45)
+
+orientedSeqs <- DECIPHER::OrientNucleotides(fasta)
+alignedSeqs <- DECIPHER::AlignSeqs(orientedSeqs)
+
+Biostrings::writeXStringSet(alignedSeqs, "seqsAnalizadas.fasta") 
+
+alineamiento <- seqinr::read.alignment("seqsAnalizadas.fasta", "fasta")
+matDist <- seqinr::dist.alignment(alineamiento) 
+temp <- as.data.frame(as.matrix(matDist))
+
+arbol <- ape::nj(matDist) 
+arbolEscalonado <- ape::ladderize(arbol)
+
+for(i in 1 : length(fasta)) {
+  arbolEscalonado$tip.label[i] <- paste0(paises[i], ", ", virus[i])
+}
+
+arbolEscalonado <- root(arbolEscalonado,arbolEscalonado$tip.label[1])
+
+
+
+
+plot(arbolEscalonado, cex = 0.6)
+title("Arbol Filogenetico")
+
+```
+
